@@ -1,4 +1,5 @@
-package ro.ase.cts.clase;
+package ro.ase.cts.utils;
+import ro.ase.cts.clase.*;
 
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
