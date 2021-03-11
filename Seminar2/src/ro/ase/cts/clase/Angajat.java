@@ -38,21 +38,20 @@ public class Angajat extends Aplicant {
 
 	@Override
 	public String toString() {
-		return "Angajat: Nume=" + nume + ", Prenume=" + prenume + ", Varsta=" + varsta + ", Punctaj=" + punctaj
-				+ ", Nr_proiecte=" + nr_proiecte + ", DenumireProiect=" + Arrays.toString(denumireProiect) + "Ocupatie="
+		return "Angajat: " + super.toString() + "Ocupatie="
 				+ ocupatie + ", salariu=" + salariu;
 	}
 
-	public int finantare() {
-		int s = 10;
-		// TODO Auto-generated method stub
-		System.out.println("Angajatul " + getNume() + " " + getPrenume() + " primeste" + s + " Euro/zi in proiect.");
-		return s;
+	@Override
+	public float getSumaFinantata() {
+		return sumaFinantare;
+	}
+	public static float getSumaFinantare() {
+		return sumaFinantare;
 	}
 
-	@Override
-	public float getSumaFinantare() {
-		return sumaFinantare;
+	public static void setSumaFinantare(float sumaFinantare) {
+		Angajat.sumaFinantare = sumaFinantare;
 	}
 
 }

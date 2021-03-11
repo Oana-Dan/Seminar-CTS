@@ -1,12 +1,14 @@
 package ro.ase.cts.clase;
 
+import java.util.Arrays;
+
 public abstract class Aplicant{
 	protected String nume;
 	protected String prenume;
 	protected int varsta;
 	protected int punctaj;
-	protected int nr_proiecte;
-	protected String[] denumireProiect;
+	protected int numarProiecte;
+	protected String[] denumiriProiecte;
 		
 	public String getNume() {
 		return nume;
@@ -26,12 +28,15 @@ public abstract class Aplicant{
 	public void setVarsta(int varsta) {
 		this.varsta = varsta;
 	}
-	public void statut(){
-		if(punctaj>80)
+	public void afiseazaStatus(Proiect proiect){
+		System.out.println("Aplicantul " + nume + " " + prenume);
+		if(punctaj>proiect.getPragAcceptare()){
 			System.out.println("Aplicantul "+nume+" "+prenume+" a fost acceptat.");
-		else
+			}
+		else {
 			System.out.println("Aplicantul "+nume+" "+prenume+" nu a fost acceptat.");
 		}
+	}
 	public int getPunctaj() {
 		return punctaj;
 	}
@@ -49,20 +54,25 @@ public abstract class Aplicant{
 		this.prenume = prenume;
 		this.varsta = varsta;
 		this.punctaj = punctaj;
-		this.nr_proiecte = nr_proiecte;
-		this.denumireProiect = denumireProiect;
+		this.numarProiecte = nr_proiecte;
+		this.denumiriProiecte = denumireProiect;
 	}
-	public int getNr_proiecte() {
-		return nr_proiecte;
+	public int getNumarProiecte() {
+		return numarProiecte;
 	}
-	public void setNr_proiecte(int nr_proiecte, String[] vect) {
-		this.nr_proiecte = nr_proiecte;
-		for(int i = 0; i < nr_proiecte; i++) {
-			this.denumireProiect = vect;
+	public void setNumarProiecte(int numarProiecte, String[] vect) {
+		this.numarProiecte = numarProiecte;
+		for(int i = 0; i < numarProiecte; i++) {
+			this.denumiriProiecte = vect;
 		}
 			
 	}
 	
-	public abstract float getSumaFinantare();
+	@Override
+	public String toString() {
+		return "Aplicant [nume=" + nume + ", prenume=" + prenume + ", varsta=" + varsta + ", punctaj=" + punctaj
+				+ ", numarProiecte=" + numarProiecte + ", denumiriProiecte=" + Arrays.toString(denumiriProiecte) + "]";
+	}
+	public abstract float getSumaFinantata();
 
 }
