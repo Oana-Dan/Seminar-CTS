@@ -7,8 +7,7 @@ public abstract class Aplicant{
 	protected int punctaj;
 	protected int nr_proiecte;
 	protected String[] denumireProiect;
-	
-	
+		
 	public String getNume() {
 		return nume;
 	}
@@ -40,9 +39,6 @@ public abstract class Aplicant{
 		this.punctaj = punctaj;
 	}
 	
-	
-
-	
 	public Aplicant() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -66,5 +62,7 @@ public abstract class Aplicant{
 		}
 			
 	}
+	
+	public abstract float getSumaFinantare();
 
 }
