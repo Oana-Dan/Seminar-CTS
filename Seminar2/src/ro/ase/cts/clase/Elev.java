@@ -7,15 +7,10 @@ public class Elev extends Aplicant{
 	private String tutore;
 	private static float sumaFinantare=20;
 	
-	public int getClasa() {
-		return clasa;
-	}
 	public void setClasa(int i) {
 		this.clasa = i;
 	}
-	public String getTutore() {
-		return tutore;
-	}
+
 	public void setTutore(String tutore) {
 		this.tutore = tutore;
 	}
@@ -41,11 +36,12 @@ public class Elev extends Aplicant{
 	public float getSumaFinantata() {
 		return sumaFinantare;
 	}
+	
 	public static float getSumaFinantare() {
 		return sumaFinantare;
 	}
+	
 	public static void setSumaFinantare(float sumaFinantare) {
 		Elev.sumaFinantare = sumaFinantare;
 	}
-	
 }

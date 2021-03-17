@@ -13,7 +13,6 @@ public class StudentReader extends AplicantReader{
 	
 	public StudentReader(String fileName) {
 		super(fileName);
-		// TODO Auto-generated constructor stub
 	}
 
 	public List<Aplicant> citesteAplicanti() throws FileNotFoundException, NumberFormatException {
@@ -24,10 +23,8 @@ public class StudentReader extends AplicantReader{
 		while (input.hasNext()) {
 			Student student = new Student();
 			super.citesteAplicant(input, student);
-			int an_studii = input.nextInt();
-			String facultate = (input.next()).toString();
-			student.setAn_studii(an_studii);
-			student.setFacultate(facultate);
+			student.setAn_studii(input.nextInt());
+			student.setFacultate(input.next());
 			studenti.add(student);
 		}
 		input.close();

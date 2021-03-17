@@ -13,25 +13,21 @@ public class PupilReader extends AplicantReader{
 
 	public PupilReader(String fileName) {
 		super(fileName);
-		// TODO Auto-generated constructor stub
 	}
 
 	public List<Aplicant> citesteAplicanti() throws FileNotFoundException {
-		Scanner input2 = new Scanner(new File(super.getFileName()));
-		input2.useDelimiter(",|\n");
+		Scanner input = new Scanner(new File(super.getFileName()));
+		input.useDelimiter(",|\n");
 		List<Aplicant> elevi = new ArrayList<Aplicant>();
 
-		while (input2.hasNext()) {
+		while (input.hasNext()) {
 			Elev elev = new Elev();
-			super.citesteAplicant(input2, elev);
-			int clasa = input2.nextInt();
-			String tutore = input2.next();
-			elev.setClasa(clasa);
-			elev.setTutore(tutore);
+			super.citesteAplicant(input, elev);
+			elev.setClasa(input.nextInt());
+			elev.setTutore(input.next());
 			elevi.add(elev);
 		}
-
-		input2.close();
+		input.close();
 		return elevi;
 	}
 }

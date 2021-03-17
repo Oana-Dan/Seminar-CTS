@@ -7,15 +7,10 @@ public class Student extends Aplicant {
 	protected int anStudii;
 	private static float sumaFinantare=20;
 	
-	public String getFacultate() {
-		return facultate;
-	}
 	public void setFacultate(String facultate) {
 		this.facultate = facultate;
 	}
-	public int getAn_studii() {
-		return anStudii;
-	}
+
 	public void setAn_studii(int an_studii) {
 		this.anStudii = an_studii;
 	}
@@ -29,20 +24,26 @@ public class Student extends Aplicant {
 		this.facultate = facultate;
 		this.anStudii = an_studii;
 	}
+	
 	@Override
 	public String toString() {
 		return "Student" + super.toString() + "Facultate=" + facultate + ", An_studii=" + anStudii ;
+	}
+	
+	public void afiseazaSumaFinantare() {
+		System.out.println("Studentul " + getNume() + " " + getPrenume() + " primeste " + sumaFinantare + " Euro/zi in proiect.");
 	}
 	
 	@Override
 	public float getSumaFinantata() {
 		return sumaFinantare;
 	}
+	
 	public static float getSumaFinantare() {
 		return sumaFinantare;
 	}
+	
 	public static void setSumaFinantare(float sumaFinantare) {
 		Student.sumaFinantare = sumaFinantare;
 	}
-	
 }

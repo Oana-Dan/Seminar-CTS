@@ -12,24 +12,21 @@ import ro.ase.cts.clase.Aplicant;
 public class AngajatReader extends AplicantReader{
 	public AngajatReader(String fileName) {
 		super(fileName);
-		// TODO Auto-generated constructor stub
 	}
 
 	public List<Aplicant> citesteAplicanti() throws FileNotFoundException {
-		Scanner input2 = new Scanner(new File(super.getFileName()));
-		input2.useDelimiter(",");
+		Scanner input = new Scanner(new File(super.getFileName()));
+		input.useDelimiter(",");
 		List<Aplicant> angajati = new ArrayList<Aplicant>();
 
-		while (input2.hasNext()) {
+		while (input.hasNext()) {
 			Angajat angajat = new Angajat();
-			super.citesteAplicant(input2, angajat);
-			int salariu = input2.nextInt();
-			String ocupatie = input2.next();
-			angajat.setSalariu(salariu);
-			angajat.setOcupatie(ocupatie);
+			super.citesteAplicant(input, angajat);
+			angajat.setSalariu(input.nextInt());
+			angajat.setOcupatie(input.next());
 			angajati.add(angajat);
 		}
-		input2.close();
+		input.close();
 		return angajati;
 	}
 }
