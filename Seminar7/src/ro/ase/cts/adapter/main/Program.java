@@ -1,4 +1,4 @@
-package ro.ase.cts.main;
+package ro.ase.cts.adapter.main;
 
 import ro.ase.cts.adapter.classes.AdapterCreditClasa;
 import ro.ase.cts.adapter.classes.AdapterCreditObiect;
