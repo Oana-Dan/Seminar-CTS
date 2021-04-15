@@ -1,6 +1,6 @@
 package ro.ase.cts.flyweight.classes;
 
-public class Client implements FlyweigthAbstract{
+public class Client implements FlyweightAbstract{
 	private String nume;
 	private String nrTelefon;
 	private String email;
