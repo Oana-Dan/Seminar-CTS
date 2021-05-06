@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ManagerComenzi {
-	List<Command> comenzi;
+	private List<Command> comenzi;
 	
 	public ManagerComenzi() {
 		super();
